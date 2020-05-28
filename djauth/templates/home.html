@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Anasayfa</h1>
+
+<span>
+    {% if request.user.is_authenticated %}
+    Merhaba {{ request.user.username }},
+    <a href="{% url 'logout' %}">Çıkış</a>
+    {% else %}
+    <a href="{% url 'login' %}">Giriş</a>
+    {% endif %}
+    </span>
+    <p><a href="{% url 'password_change' %}">Şifre değiştir</a></p>
+{% endblock %}

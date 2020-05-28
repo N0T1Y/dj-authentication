@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Giriş Ekranı</h1>
+{% if form.errors %}
+<p>
+Kullanıcı adı ve Şifre hatalı.
+</p>
+{% else %}
+<p>Giriş Formu</p>
+
+{% endif %}
+<div>
+<form action="{% url 'login' %}" method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ next }}" />
+<p><input type="submit" value="Giriş"></p>
+</form>
+<p><a href="{% url 'password_reset' %}">Şifremi unuttum</a></p>
+</div>
+{% endblock %}
