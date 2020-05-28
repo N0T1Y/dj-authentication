@@ -1,6 +1,6 @@
 # dj-authentication
-Django built in authenticationa
-Çalıştırmak için
+Django built in authentication
+Kurulum için
 
 1-virtualenv env
 2-pip install -r requirements.txt
